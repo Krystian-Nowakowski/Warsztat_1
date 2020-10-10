@@ -69,31 +69,32 @@ public class TaskManager {
         }
     }
 
-    Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNextLine()){
-        String input = scanner.nextLine();
-        switch (input) {
-            case "exit":
-                saveTabToFile(FILE_NAME, tasks);
-                System.out.println("\033[0;32mHave a good day\033[0m");
-                System.exit(0);
-                break;
-            case "add":
-                addTask();
-                break;
-            case "remove":
-                removeTask(tasks, getNumber());
-                System.out.println("Value was successfully deleted");
-                break;
-            case "list":
-                printTab(tasks);
-                break;
-            default:
-                System.out.println("Incorrect Option, Please select one from the list");
+    {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNextLine()) {
+            String input = scanner.nextLine();
+            switch (input) {
+                case "exit":
+                    saveTabToFile(FILE_NAME, tasks);
+                    System.out.println("\033[0;32mHave a good day\033[0m");
+                    System.exit(0);
+                    break;
+                case "add":
+                    addTask();
+                    break;
+                case "remove":
+                    removeTask(tasks, getNumber());
+                    System.out.println("Value was successfully deleted");
+                    break;
+                case "list":
+                    printTab(tasks);
+                    break;
+                default:
+                    System.out.println("Incorrect Option, Please select one from the list");
+            }
+            printOptions(OPTIONS);
         }
-        printOptions(OPTIONS);
     }
-
 
     public static void addTask() {
         Scanner scanner = new Scanner(System.in);
